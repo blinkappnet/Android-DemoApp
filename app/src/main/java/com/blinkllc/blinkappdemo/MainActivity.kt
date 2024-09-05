@@ -238,7 +238,10 @@ class MainActivity : AppCompatActivity(),
                             }
                         }
 
-                    })
+                    },3,
+                        speedLimit = 100.0,
+                        overSpeedThreshold = 10.0,
+                        calculateScore = true)
 //                    blinkManager.startDriverBehavior(object : DriverBehaviorEventListener {
 //                        /**
 //                         * a callback method called when driver behavior updated.
@@ -659,6 +662,12 @@ class MainActivity : AppCompatActivity(),
                 }
                 15->{
                     activityMainBinding.incidentStatus.text = "Cornering - Level: $level"
+                }
+                7->{
+                    activityMainBinding.incidentStatus.text = "Over Speed - Level: $level"
+                }
+                5->{
+                    activityMainBinding.incidentStatus.text = "Acceleration - Level: $level"
                 }
             }
 
